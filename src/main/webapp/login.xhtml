@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Login</title>
+</h:head>
+
+<h:body>
+    <div class="card">
+        <h:form>
+            <p:growl id="messages"/>
+
+            <p:menubar hideDelay="1000">
+                <f:facet name="start">
+                    <p:graphicImage name="images/primefaces-logo.svg"
+                                    library="showcase"/>
+                </f:facet>
+
+                <f:facet name="end">
+                    <div class="mr-2 align-items-center">
+                        <h5>MANAGE SYSTEM PRODUCTS</h5>
+                    </div>
+                </f:facet>
+            </p:menubar>
+        </h:form>
+    </div>
+    <h:form style="width:300px;margin:100px auto;">
+        <p:growl id="messages" showDetail="true" />
+
+        <p:panel header="Login" style="text-align:center;">
+            <div class="field grid">
+                <label for="firstname3" class="col-fixed" style="width:100px">UserName
+                </label>
+                <div class="col">
+                    <h:inputText id="username"
+                                 value="#{loginBean.username}"
+                                 styleClass="p-inputtext" />
+                </div>
+            </div>
+            <div class="field grid">
+                <label for="password" class="col-fixed" style="width:100px">Password
+                </label>
+                <div class="col">
+                    <h:inputSecret id="password"
+                                   value="#{loginBean.password}"
+                                   styleClass="p-inputtext" />
+                </div>
+            </div>
+<!--            <p:inputText value="#{loginBean.username}" placeholder="Usuario" required="true"/>-->
+<!--            <p:password value="#{loginBean.password}" placeholder="Contraseña" required="true"/>-->
+            <p:commandButton value="Login" action="#{loginBean.login}" update="messages" style="width:100%;margin-top:10px;"/>
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
