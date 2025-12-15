@@ -8,7 +8,7 @@
 1. Clone repository `https://github.com/luisca060606/jsf-webapp.git`
 2. Install java21 and download server wildfly 38
 3. From the root of your project execute 'mvn clean install'
-4. Expose a desserts database locally or with Docker
+4. Expose a desserts database with products table and column id, name, price. Locally or with Docker
 5. Add datasource in Wildfly manager `Config -> Subsystem -> Datasource and drivers -> add` "If you don't have the PostgreSQL JDBC driver, download it from the Maven repository."
 6. In persistence.xml change JNDI Name with your instance
 `<persistence-unit name="CRUD_P" transaction-type="JTA">
